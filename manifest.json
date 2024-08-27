@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Amex Life Time Rewards",
+    "version": "1.0",
+    "permissions": ["storage", "activeTab", "scripting"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+          "matches": ["*://*.americanexpress.com/*"],
+          "js": ["utils.js"]
+        }
+    ],
+    "icons": {
+        "16": "icons/amex_reward_calculator.png",
+        "48": "icons/amex_reward_calculator.png",
+        "128": "icons/amex_reward_calculator.png"
+    }
+}
