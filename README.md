@@ -12,9 +12,9 @@ This Chrome extension automates the process of tracking total lifetime rewards e
 
 ## How to Use
 1. Install the extension in Chrome.
-2. Log into your American Express account and navigate to the /summary page.
+2. Log into your American Express account and navigate to the [/summary](https://global.americanexpress.com/rewards/summary) page.
 3. Click on the extension icon in your toolbar.
-4. Once the pop-up appears, click on the 'Run' button to start processing.
+4. Once the pop-up appears, click on the `Start Processing` button to start processing.
 5. The extension will start navigating each card and begin compiling the lifetime rewards and expenses.
 6. Data will be displayed as it is extracted. You can monitor the process as it happens.
 7. Click on 'Clear Storage' button if you wish to delete the stored data.
