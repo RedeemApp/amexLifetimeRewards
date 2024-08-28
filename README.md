@@ -2,6 +2,7 @@
 This Chrome extension automates the process of tracking total lifetime rewards earned on American Express (Amex) credit cards along with corresponding expenses. It extracts the data from the Amex summary page and stores it locally in the browser.
 
 ## Features
+- **Privacy:** No data leaves your computer.
 - **Automation:** The extension automatically navigates through each card and compiles reward points data along with corresponding expenses.
 - **Persistent Data:** The data is stored locally in the browser for easy access and tracking.
 - **Updates:** The extension displays live updates of the total rewards and expenses as it processes each card.
@@ -24,5 +25,10 @@ This Chrome extension automates the process of tracking total lifetime rewards e
 - Adjust points for refunds.
 - Extend functionality to include points from closed cards.
 - Further optimize page navigation and data extraction process.
+
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+ 
 ## Disclaimer
 This extension is intended for personal use only. By using this extension, you acknowledge that you are using it at your own risk. We hold no responsibility for any issues or damage that may occur. Always ensure you are following Amex's policies and terms of use.
