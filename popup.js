@@ -14,6 +14,10 @@ function cardRunnerFunc() {
     runner.runIterations(4);
 }
 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 
 document.getElementById('clear-storage-button').addEventListener('click', function() {
     chrome.storage.local.clear(function() {
@@ -36,7 +40,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
             console.log(results);
             console.log("^^^^^ setting total");
             if(results && results[0] && results[0].result) {
-                document.getElementById('total').textContent = results[0].result;
+                document.getElementById('total').textContent = numberWithCommas(results[0].result);
             }
         });
         
@@ -101,7 +105,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
                         let cardTotalElement = document.createElement('p');
                         cardTotalElement.classList.add('font-mono','text-sm');
-                        cardTotalElement.textContent = cards[cardName].points + " | " + ("\u20B9" + cards[cardName].expense.toFixed(1).toString()).padStart(11, "\u00A0");
+                        cardTotalElement.textContent = numberWithCommas(cards[cardName].points) + " | " + ("\u20B9" + numberWithCommas(cards[cardName].expense.toFixed(0).toString())).padStart(11, "\u00A0");
                         card.appendChild(cardTotalElement);
 
                         wrapperDiv.appendChild(card);
@@ -112,7 +116,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
                     let totalText = document.createElement('p');
                     totalText.classList.add('font-bold', 'text-sm');
-                    totalText.textContent = 'MR:' + ' ' + Object.values(cards).reduce((a, b) => a + b.points, 0);
+                    totalText.textContent = 'MR:' + ' ' + numberWithCommas(Object.values(cards).reduce((a, b) => a + b.points, 0));
                     totalDiv.appendChild(totalText);
                     wrapperDiv.appendChild(totalDiv);
 
@@ -134,7 +138,7 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
             let total = document.getElementById('total');
             console.log("Update total!");
             // Assuming 'newValue' is the new value you want to set
-            total.textContent = newValue;
+            total.textContent = numberWithCommas(newValue);
             
             total.classList.add('animate-total');
             
@@ -182,8 +186,8 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
 
                 let cardTotalElement = document.createElement('p');
                 cardTotalElement.classList.add('font-mono','text-sm');
-                cardTotalElement.textContent = cards[cardName].points + " | " + ("\u20B9" + cards[cardName].expense.toFixed(1).toString()).padStart(11, "\u00A0");
-                 card.appendChild(cardTotalElement);
+                cardTotalElement.textContent = numberWithCommas(cards[cardName].points) + " | " + ("\u20B9" + numberWithCommas(cards[cardName].expense.toFixed(0).toString())).padStart(11, "\u00A0");
+                   card.appendChild(cardTotalElement);
 
                 wrapperDiv.appendChild(card);
             }
@@ -193,7 +197,7 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
 
             let totalText = document.createElement('p');
             totalText.classList.add('font-bold', 'text-sm');
-            totalText.textContent = 'Total:' + ' ' + Object.values(cards).reduce((a, b) => a + b.points, 0);
+            totalText.textContent = 'MR:' + ' ' + numberWithCommas(Object.values(cards).reduce((a, b) => a + b.points, 0));
             totalDiv.appendChild(totalText);
             wrapperDiv.appendChild(totalDiv);
 

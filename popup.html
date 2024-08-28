@@ -31,10 +31,16 @@
 <body>
     <div class="container">
         <div class="ticket">
+            <div class="flex items-center justify-center"> <!-- Added flexbox container for vertical and horizontal alignment -->
+                <img class="amex-icon mr-2" src="icons/amex.png" alt="Amex Icon">
+                <h2 class="extension-heading text-xl">MR Analyzer</h2> <!-- Modified Tailwind classes -->
+            </div>
+
             <button id="run-button"><i class="material-icons">autorenew</i> Start Processing</button>
-            <div id="total-value" class="flex items-center">
-                <label for="total" class="text-sm text-gray-700 mr-1" id="total-label">Total MR Points:</label> 
-                <span id="total" class="text-lg font-bold text-blue-700">XXXXXXXX</span>
+
+            <div id="total-value" class="flex justify-between">
+                <label for="total" class="text-sm text-gray-700" id="total-label">Total MR Points Haul:</label> 
+                <span id="total" class="text-md font-bold text-blue-700">XXXXXXXX</span>
             </div>
             
             
@@ -45,6 +51,9 @@
             </button>
 
         </div>
+        <p class="disclaimer">
+            This extension is a best effort solution and not officially associated or endorsed by American Express.
+        </p>
     </div>
 <script src="popup.js"></script>
 </body>

@@ -2,7 +2,7 @@
   
   #total-value {
     margin: 20px 0;
-    font-size: 20px;
+    font-size: 15px;
   }
   
   #total-value span {
@@ -125,6 +125,8 @@ button:active {
     align-items: center;
     justify-content: center;
     height: 40px;
+    box-shadow: 0px 2px 6px hsl(0, 0%, 12%);
+    border: none;
 }
 #trash {
     margin-left: 10px;
@@ -132,14 +134,42 @@ button:active {
 
 #clear-storage-button:hover {
     background-color: white;
+    
 }
-
 #run-button {
-    color: #673AB7;
-    background-color: #FFC107;
+    color: #ffffff;
+    background-color: hsl(0deg 3.27% 12.58% / 98%);
+    backdrop-filter: blur(10px);
 }
 #trash {
     margin-left: 8px;
     margin-top: 4px;
     width: 18px;
 }
+
+.amex-icon {
+    display: block;
+    margin-bottom: 10px;
+    width: 24px;
+    height: 24px;
+    
+    border: 2px solid #ffffff38;
+    border-radius: 50%;
+  }
+  
+  .disclaimer {
+    font-size: 0.8em;
+    color: #444;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.extension-heading {
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, blue , black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
