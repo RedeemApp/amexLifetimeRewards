@@ -1,5 +1,17 @@
 // Add click event listener
 document.getElementById('run-button').addEventListener('click', function() {
+        // disable the button
+        this.disabled = true;
+
+        // change the button text
+        this.innerHTML = "<i class='material-icons'>autorenew</i> Starting..";
+    
+        // enable the button after 5 seconds (5000 milliseconds)
+        setTimeout(() => {
+            this.disabled = false;
+            // change the button text back
+            this.innerHTML = "<i class='material-icons'>autorenew</i> Start Processing";
+        }, 5000)
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         chrome.scripting.executeScript({
             target: {tabId: tabs[0].id},
@@ -20,6 +32,7 @@ function numberWithCommas(x) {
 
 
 document.getElementById('clear-storage-button').addEventListener('click', function() {
+
     chrome.storage.local.clear(function() {
         var error = chrome.runtime.lastError;
         if (error) {

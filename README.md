@@ -21,6 +21,7 @@ This Chrome extension automates the process of tracking total lifetime rewards e
 8. Please note that the extension works on a 2-second delay between each action to allow page elements to load properly.
 
 ## Future Enhancements (TODO)
+- Adjust points for refunds.
 - Extend functionality to include points from closed cards.
 - Further optimize page navigation and data extraction process.
 ## Disclaimer
