@@ -173,3 +173,6 @@ button:active {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  .header-points-expense, .header-name {
+    color: #556d6b;
+  }

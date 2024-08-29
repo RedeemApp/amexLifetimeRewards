@@ -103,10 +103,25 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     // Display each card's total
                     let cardWiseDiv = document.getElementById('card-wise') || document.body;
 
+
                     let wrapperDiv = document.createElement('div');
                     wrapperDiv.classList.add('w-full', 'text-right');
                     cardWiseDiv.appendChild(wrapperDiv);
 
+                    let headerRow = document.createElement('div');
+                    headerRow.classList.add('flex', 'justify-between');
+                    let nameHeader = document.createElement('p');
+                    nameHeader.textContent = 'Card';
+                    nameHeader.classList.add('font-mono','text-sm', 'header-name');
+                    headerRow.appendChild(nameHeader);
+                    headerRow.classList.add('pt-2', 'border-b', 'border-gray-200', 'mt-2');
+                    let pointsExpenseHeader = document.createElement('p');
+                    pointsExpenseHeader.classList.add('font-mono','text-sm', 'header-points-expense');
+                    // Assuming you want aligned to the '|' character
+                    // Using padStart to align header similar to the column data
+                    pointsExpenseHeader.textContent = 'Points |' + 'Expense'.padStart(12, "\u00A0");
+                    headerRow.appendChild(pointsExpenseHeader);
+                    wrapperDiv.appendChild(headerRow);
                     for (let cardName in cards) {
                         let card = document.createElement('div');
                         card.classList.add('flex', 'justify-between');
